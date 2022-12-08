@@ -6,16 +6,31 @@
 //
 
 import SwiftUI
-
+struct blankView: View {
+    var body: some View {
+        NavigationView(){
+            ZStack() {
+                Color.gray
+            }
+        }
+    }
+}
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        TabView {
+                BasicCalc()
+                    .tabItem() {
+                        Text("Basic Calc")
+                    }
+                BasicGraph()
+                    .tabItem() {
+                        Text("Graph View")
+                    }
+               /* Function()
+                    .tabItem() {
+                        Text("Functions")
+                    }*/
         }
-        .padding()
     }
 }
 

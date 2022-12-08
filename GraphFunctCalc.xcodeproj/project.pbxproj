@@ -14,6 +14,10 @@
 		3FCA171C29156FAB0031D815 /* GraphFunctCalcTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCA171B29156FAB0031D815 /* GraphFunctCalcTests.swift */; };
 		3FCA172629156FAB0031D815 /* GraphFunctCalcUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCA172529156FAB0031D815 /* GraphFunctCalcUITests.swift */; };
 		3FCA172829156FAB0031D815 /* GraphFunctCalcUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCA172729156FAB0031D815 /* GraphFunctCalcUITestsLaunchTests.swift */; };
+		3FCA173629156FE00031D815 /* BasicCalc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCA173529156FE00031D815 /* BasicCalc.swift */; };
+		3FCA173829156FF50031D815 /* BasicGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCA173729156FF50031D815 /* BasicGraph.swift */; };
+		3FCA173A291570090031D815 /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCA1739291570090031D815 /* Functions.swift */; };
+		3FCA173C291576410031D815 /* GraphSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FCA173B291576410031D815 /* GraphSettings.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +48,10 @@
 		3FCA172129156FAB0031D815 /* GraphFunctCalcUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GraphFunctCalcUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3FCA172529156FAB0031D815 /* GraphFunctCalcUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphFunctCalcUITests.swift; sourceTree = "<group>"; };
 		3FCA172729156FAB0031D815 /* GraphFunctCalcUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphFunctCalcUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		3FCA173529156FE00031D815 /* BasicCalc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicCalc.swift; sourceTree = "<group>"; };
+		3FCA173729156FF50031D815 /* BasicGraph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicGraph.swift; sourceTree = "<group>"; };
+		3FCA1739291570090031D815 /* Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
+		3FCA173B291576410031D815 /* GraphSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphSettings.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +104,7 @@
 			children = (
 				3FCA170A29156FA80031D815 /* GraphFunctCalcApp.swift */,
 				3FCA170C29156FA80031D815 /* ContentView.swift */,
+				3FCA173429156FB70031D815 /* Pages */,
 				3FCA170E29156FAB0031D815 /* Assets.xcassets */,
 				3FCA171029156FAB0031D815 /* Preview Content */,
 			);
@@ -125,6 +134,17 @@
 				3FCA172729156FAB0031D815 /* GraphFunctCalcUITestsLaunchTests.swift */,
 			);
 			path = GraphFunctCalcUITests;
+			sourceTree = "<group>";
+		};
+		3FCA173429156FB70031D815 /* Pages */ = {
+			isa = PBXGroup;
+			children = (
+				3FCA173529156FE00031D815 /* BasicCalc.swift */,
+				3FCA1739291570090031D815 /* Functions.swift */,
+				3FCA173729156FF50031D815 /* BasicGraph.swift */,
+				3FCA173B291576410031D815 /* GraphSettings.swift */,
+			);
+			path = Pages;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,7 +278,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				3FCA170D29156FA80031D815 /* ContentView.swift in Sources */,
+				3FCA173629156FE00031D815 /* BasicCalc.swift in Sources */,
 				3FCA170B29156FA80031D815 /* GraphFunctCalcApp.swift in Sources */,
+				3FCA173C291576410031D815 /* GraphSettings.swift in Sources */,
+				3FCA173A291570090031D815 /* Functions.swift in Sources */,
+				3FCA173829156FF50031D815 /* BasicGraph.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
