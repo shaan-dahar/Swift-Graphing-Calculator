@@ -22,10 +22,10 @@ struct ContentView: View {
                     .tabItem() {
                         Text("Basic Calc")
                     }
-                BasicGraph()
+               /* BasicGraph()
                     .tabItem() {
                         Text("Graph View")
-                    }
+                    }*/
                /* Function()
                     .tabItem() {
                         Text("Functions")
