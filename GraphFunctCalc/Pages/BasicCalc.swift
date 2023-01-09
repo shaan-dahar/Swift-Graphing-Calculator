@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Foundation
 
 struct BasicCalc_Previews: PreviewProvider {
     static var previews: some View {
@@ -33,7 +34,16 @@ enum CalcButton: String {
     case decimal = "."
     case percent = "%"
     case neg = "-/+"
-    /*case vari = "var"*/
+    case vari = "var"
+    case sec = "2nd"
+    case opar = "("
+    case epar = ")"
+    case ln = "ln"
+    case log = "log"
+    case sin = "sin"
+    case cos = "cos"
+    case tan = "tan"
+    case exp = "^"
     var buttonColor: Color {
         switch self {
         case .add, .sub, .mult, .div, .equal:
@@ -46,20 +56,23 @@ enum CalcButton: String {
     }
 }
 enum Operation {
-    case add, sub, mult, div, none
+    case add, sub, mult, div, sin, cos, tan, log, ln, exp, none
 }
 
 struct BasicCalc: View {
     @State var value = "0"
     @State var runningNumber = 0
     @State var currentOperation: Operation = .none
-    
+    @State var cFunc = ""
+    @State var second = false
     let buttons: [[CalcButton]] = [
+        [.sin, .cos, .tan, .sec],
+        [.opar, .epar, .ln, .log],
         [.clear, .neg, .percent, .div],
         [.seven, .eight, .nine, .mult],
         [.four, .five, .six, .sub],
         [.one, .two, .three, .add],
-        [.zero, .decimal, .equal],
+        [.zero, .exp, .decimal, .equal],
     ]
 
     var body: some View {
@@ -102,8 +115,11 @@ struct BasicCalc: View {
     }
     func didTap(button: CalcButton) {
         switch button {
-        case .add, .sub, .mult, .div, .equal:
-            if button == .add {
+        case .sec, .add, .sub, .mult, .div, .sin, .cos, .tan, .ln, .log, .equal:
+            if button == .sec {
+                self.second = true
+            }
+            else if button == .add {
                 self.currentOperation = .add
                 self.runningNumber = Int(self.value) ?? 0
             }
@@ -119,6 +135,30 @@ struct BasicCalc: View {
                 self.currentOperation = .div
                 self.runningNumber = Int(self.value) ?? 0
             }
+            else if button == .sin {
+                self.currentOperation = .sin
+                self.runningNumber = Int(self.value) ?? 0
+            }
+            else if button == .cos {
+                self.currentOperation = .cos
+                self.runningNumber = Int(self.value) ?? 0
+            }
+            else if button == .tan {
+                self.currentOperation = .tan
+                self.runningNumber = Int(self.value) ?? 0
+            }
+            else if button == .ln {
+                self.currentOperation = .ln
+                self.runningNumber = Int(self.value) ?? 0
+            }
+            else if button == .log {
+                self.currentOperation = .log
+                self.runningNumber = Int(self.value) ?? 0
+            }
+            else if button == .exp {
+                self.currentOperation = .exp
+                self.runningNumber = Int(self.value) ?? 0
+            }
             else if button == .equal {
                 let runningValue = self.runningNumber
                 let currentValue = Int(self.value) ?? 0
@@ -127,6 +167,32 @@ struct BasicCalc: View {
                 case .sub: self.value = "\(runningValue - currentValue)"
                 case .mult: self.value = "\(runningValue * currentValue)"
                 case .div: self.value = "\(runningValue / currentValue)"
+                case .sin: if (self.second == false) {
+                    self.value = "\(sin(Double (currentValue)))"
+                }
+                    else {
+                        self.value = "\(sinh(Double (currentValue)))"
+                    }
+                case .cos: if (self.second == false) {
+                    self.value = "\(cos(Double (runningValue)))"
+                }
+                    else {
+                        self.value = "\(cosh(Double (runningValue)))"
+                    }
+                case .tan: if (self.second == false) {
+                    self.value = "\(tan(Double (runningValue)))"
+                }
+                    else {
+                        self.value = "\(tanh(Double (runningValue)))"
+                    }
+                case .ln: self.value = "\(log(Double (runningValue)))"
+                case .log: self.value = "\(log(Double(runningValue)) / (log(Double (currentValue))))"
+                case .exp: if (self.second == false) {
+                    self.value = "\(pow(Double (currentValue), Double (runningValue)))"
+                }
+                    else {
+                        self.value = "\(pow(Double(runningValue), Double(1/currentValue)))"
+                    }
                 case .none:
                     break
                 }
@@ -149,14 +215,9 @@ struct BasicCalc: View {
         }
     }
         func buttonWidth(item: CalcButton) -> CGFloat {
-            if item == .zero {
-                return ((UIScreen.main.bounds.width - (4*12)) / 4) * 2
-            }
-            else {
-                return ((UIScreen.main.bounds.width) - (5*12))/4
-            }
+            return ((UIScreen.main.bounds.width) - (7*12))/6
         }
         func buttonHeight() -> CGFloat {
-            return ((UIScreen.main.bounds.width) - (5*12))/4
+            return ((UIScreen.main.bounds.width) - (7*12))/6
         }
     }

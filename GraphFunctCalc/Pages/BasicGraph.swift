@@ -8,13 +8,38 @@
  use linemark graphs from charts
  use graph settings to decide what bounds to graph in, and how spread out each input point should be
  # of x vals decide # of y vals
- 
+ top half of screen is graph itself
+ bottom half of screen is list of buttons per function
  */
 import SwiftUI
+import Charts
 
+struct fPoint {
+    var inp: Double
+    var oup: Double
+}
+func plot(/*function and input*/) {
+    /*decided by range in graph settings*/
+    /*while (between x bounds) {
+     graphpoints.append(x,y)*/
+    
+}
 struct BasicGraph: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        /*chart*/
+        Chart{ /*outer loop for all funcs, inner loop for single lines*/
+            /*ForEach(FUNCTIONLIST, id: \.name) {series in*/
+                /*ForEach(series.fPoint) {item in
+                    LineMark(
+                    x: .value("x", item.inp),
+                    y: .value("y", item.oup)
+                    )
+                 }
+             }*/
+        }
+        /*create new button in grid
+            onTap(plot it out)*/
+        
     }
 }
 

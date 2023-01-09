@@ -9,13 +9,13 @@
  which functions are getting graphed if any, and whatever else a graph has on a graphing calc*/
 import Foundation
 /*what function, what inputs*/
-var curFunc = Function()
-var points: [Int] = []
 /*how spread out are the graphed points?*/
-var inscale = Int()
+var inscale = Double()
 /*choose edges of where we see in graph
  start and end of x / y plane*/
-var Xblow = Int()
-var Xbhi = Int()
-var Yblow = Int()
-var Ybhi = Int()
+var Xblow = Double()
+var Xbhi = Double()
+var Yblow = Double()
+var Ybhi = Double()
+var xscale = Double()
+var yscale = Double()
